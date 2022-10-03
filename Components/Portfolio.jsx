@@ -10,8 +10,6 @@ import { TypeWritting } from "./TypeWritting";
 import { WhyChooseMe } from "./WhyChooseMe";
 import Programming from "./Programming";
 import styles from "../styles/Portfolio.module.scss";
-import data from "../Data/PortfolioData.json";
-import highlightDatas from "../Data/Portfoliohighlight.json";
 import { toast } from "react-toastify";
 
 export const Portfolio = () => {
@@ -94,9 +92,10 @@ export const Portfolio = () => {
               <TypeWritting />
             </div>
             <p className={styles.aboutDescription}>
-              {data.map((e, i) => (
-                <>{e[0].about}</>
-              ))}
+              Hardworking passionate proficiency of grasping new technical
+              concepts quickly. Believe in continuous learning and Innovative
+              approach. Ready to achieve company goals. Industry experience in
+              HTML,CSS, JavaScript, React JS, Next JS
             </p>
 
             <span>
@@ -134,31 +133,25 @@ export const Portfolio = () => {
           <div className={styles.portTitle}>AboutMe</div>
           <div>
             <p className={styles.aboutDescription}>
-              {" "}
-              {data.map((e, i) => (
-                <>{e[0].skillset}</>
-              ))}
+              FrontEnd Developer developer with background knowledge of
+              HTML,CSS,JavaScript,React Js with Next Js Framework, along with a
+              knack of building applications with utmost efficiency.
             </p>
           </div>
           <div className={styles.WhyChooseMeContainer}>
             <WhyChooseMe title="Why Choose Me?" />
           </div>
-          {data.map((e, i) => (
-            <>
-              <p className={styles.highlightTitle} key={i}>
-                {" "}
-                {e[0].highlight}
-              </p>
-            </>
-          ))}
+
+          <p className={styles.highlightTitle}>Here are a Few Highlights:</p>
 
           <div className={styles.highlightDatakeys}>
             <ul>
-              {highlightDatas.map((e, i) => (
-                <>
-                  <li>{e[0].highlights} </li>
-                </>
-              ))}
+              <li>FrontEnd development</li>
+              <li>Interactive Front End as per the design</li>
+              <li>
+                Next.js is a flexible React framework that gives you building
+                blocks to create fast web applications
+              </li>
             </ul>
           </div>
         </div>
