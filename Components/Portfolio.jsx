@@ -1,4 +1,4 @@
-import { useState,useRef } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Education from "./Education";
 import WorkingHistory from "./WorkingHistory";
@@ -55,29 +55,28 @@ export const Portfolio = () => {
     SetProjects(false);
     SetInterests(true);
   };
-  const homeRef =useRef();
-  const aboutRef =useRef();
-  const resumeRef =useRef();
-  const ContactRef =useRef();
-  const handleHomeView=()=>{
-    homeRef.current.scrollIntoView({behavior: "smooth"});
-  }
-  const handleAboutView=()=>{
-    aboutRef.current.scrollIntoView({behavior: "smooth"});
-  }
-  const handleResumeView=()=>{
-    resumeRef.current.scrollIntoView({behavior: "smooth"});
-  }
-  const handleContactView=()=>{
-    ContactRef.current.scrollIntoView({behavior: "smooth"});
-  }
-  const handleDownload=()=>{
-      toast.success("Resume Downloaded Successfully!");
-  }
+  const homeRef = useRef();
+  const aboutRef = useRef();
+  const resumeRef = useRef();
+  const ContactRef = useRef();
+  const handleHomeView = () => {
+    homeRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleAboutView = () => {
+    aboutRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleResumeView = () => {
+    resumeRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleContactView = () => {
+    ContactRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleDownload = () => {
+    toast.success("Resume Downloaded Successfully!");
+  };
 
   return (
     <>
-
       <div className={styles.portfolioContainer} ref={homeRef}>
         <div className={styles.navbarContainer}>
           <div onClick={handleHomeView}>Home</div>
@@ -92,22 +91,26 @@ export const Portfolio = () => {
               Hello, I'M <span className={styles.myName}>Dhanasekar</span>
             </p>
             <div className={styles.jobDescription}>
-            <TypeWritting />
+              <TypeWritting />
             </div>
             <p className={styles.aboutDescription}>
               {data.map((e, i) => (
-                <span key={i}>{e[0].about}</span>
+                <>{e[0].about}</>
               ))}
             </p>
-               
-               <span>
-                <a href="/Resume.pdf" download={"DhanasekarResume"} onClick={handleDownload}>
+
+            <span>
+              <a
+                href="/Resume.pdf"
+                download={"DhanasekarResume"}
+                onClick={handleDownload}
+              >
                 <Button buttonName="Download Resume" />
-                </a>
-                </span>
-                <span onClick={handleContactView}>
-                <Button buttonName="Hire Me" />
-                </span>
+              </a>
+            </span>
+            <span onClick={handleContactView}>
+              <Button buttonName="Hire Me" />
+            </span>
           </div>
           <div className={styles.profileImageContainer}>
             <Image
@@ -126,14 +129,14 @@ export const Portfolio = () => {
           alt={"bordersvg"}
         />
 
-        <div  ref={aboutRef}/>
+        <div ref={aboutRef} />
         <div className={styles.aboutMeContainer}>
           <div className={styles.portTitle}>AboutMe</div>
           <div>
             <p className={styles.aboutDescription}>
               {" "}
               {data.map((e, i) => (
-                <span key={i}>{e[0].skillset}</span>
+                <>{e[0].skillset}</>
               ))}
             </p>
           </div>
@@ -165,8 +168,8 @@ export const Portfolio = () => {
           height={126}
           alt={"bordersvg"}
         />
-        <div ref={resumeRef}/>
-        <div className={styles.resumeContainer} >
+        <div ref={resumeRef} />
+        <div className={styles.resumeContainer}>
           <div className={styles.portTitle}>Resume</div>
           <div className={styles.WhyChooseMeContainer}>
             <WhyChooseMe title="My Bio Details" />
@@ -195,7 +198,7 @@ export const Portfolio = () => {
           height={126}
           alt={"bordersvg"}
         />
-        <div ref={ContactRef}/>
+        <div ref={ContactRef} />
         <ContactForm />
       </div>
     </>
