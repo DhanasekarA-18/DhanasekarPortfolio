@@ -32,8 +32,8 @@ const ContactForm = () => {
           <div><Link href={"https://www.linkedin.com/in/dhanasekar-a-07a08a1a8/"}><Image src="/linkedin.svg" width={32} height={32}/></Link></div>
             <div><Link href={"https://www.instagram.com/_d.s.018_/"}><Image src="/instagram.svg" width={32} height={32}/></Link></div>
             <div><Link href={"https://www.facebook.com/profile.php?id=100035913819054"}><Image src="/facebook.svg" width={32} height={32}/></Link></div>
-            <div><Link href={"https://api.whatsapp.com/send/?phone=%2B919360678110&text=Hi+DHANASEKAR+I+want+to+hire+you+for&type=phone_number&app_absent=0"}><Image src="/whatsapp-16.ico" width={32} height={32}/></Link></div>
-            <div><Link href={"https://www.youtube.com/channel/UC1nofq6mHW4OkMGSg50F3Zg"}><Image  src="/youtube.svg" width={32} height={32}/></Link></div> 
+            <div style={{backgroundColor:"white",padding:"0px 2px"}}><Link href={"https://api.whatsapp.com/send/?phone=%2B919360678110&text=Hi+Dhanasekar+I+want+to+hire+you+for&type=phone_number&app_absent=0"}><Image src="/whatsapp.svg" width={32} height={32}/></Link></div>
+            {/*<div><Link href={"https://www.youtube.com/channel/UC1nofq6mHW4OkMGSg50F3Zg"}><Image  src="/youtube.svg" width={32} height={32}/></Link></div> */}
           </div>
         </div>
 
