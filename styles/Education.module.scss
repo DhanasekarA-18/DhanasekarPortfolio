@@ -1,0 +1,26 @@
+.educationContainer{
+    color: black;
+       max-width: 800px;
+}
+.box1{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+.educationArea{
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 500;
+    color:#ff5823;
+}
+.passingYear{
+    border: 1px solid orange;
+    background-color: #ff5823;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
+.technologyTitle{
+    font-size: 18px;
+    font-weight: 600;
+}

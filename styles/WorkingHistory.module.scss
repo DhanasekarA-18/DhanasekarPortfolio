@@ -1,0 +1,46 @@
+.WorkingHistoryContainer{
+   max-width: 800px;
+   color: black !important;
+   padding: 5px;
+}
+.passingYear{
+    border: 1px solid orange !important;
+    background-color: #ff5823 !important;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    display: inline;
+    float: right;
+}
+.workContainer{
+    display: flex;
+}
+.internTitle{
+    font-size: 20px !important;
+    font-weight: 600;
+    color:rgb(36, 36, 124);
+    display: block;
+}
+.skill{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.skillSet{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.internDescription{
+    font-size: 18px;
+}
+
+@Media(max-width:786px)
+{
+    .internDescription{
+        font-size: 20px;
+        p:first-child{
+            color:green;
+            font-weight: bolder;
+        }
+    }   
+}

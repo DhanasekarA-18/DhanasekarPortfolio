@@ -1,0 +1,26 @@
+.ProgrammingtextContainer{
+    color:rgb(22, 22, 174);
+    font-size: 20px;
+    font-weight: 800;
+    width: 600px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.percentage{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    max-width: 200px;
+    padding: 10px;
+}
+.box1{
+    background-color: green;
+}
+.box2{
+    background-color:  #ff5823;
+}
+@Media(max-width:786px)
+{
+    .ProgrammingtextContainer{
+        width: 100%;
+    }
+}

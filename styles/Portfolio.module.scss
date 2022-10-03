@@ -1,0 +1,159 @@
+.portfolioContainer
+{
+    background-image: linear-gradient(62deg, #23234a 0%, #340d7d 100%);
+    width: 100%;
+    color: white;
+    border-radius: 30px;
+    margin: auto;
+
+}
+.navbarContainer{
+    padding: 50px 0px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 32px;
+    font-weight: 2em;
+    color: white;
+    div{
+        cursor: pointer;
+    &:hover{
+        color:tomato;
+    }
+    }
+
+}
+.homeContainer{
+    margin: 100px;
+    display: flex;
+    justify-content:space-evenly;
+}
+.homePage{
+    font-size: 30px;
+}
+.myName{
+    color: orangered;
+    text-transform: uppercase;
+}
+.aboutDescription{
+    font-size: 25px;
+    color:yellow;
+    font-weight: 600;
+    display: flex;
+    width: 100%;
+    margin:auto;
+    margin-bottom: 10px;
+}
+.jobDescription{
+    margin-bottom: 10px;
+}
+.profileImage{
+border-radius: 200px;
+}
+
+.profileImageContainer{
+    margin: 50px 0px;
+   }
+.aboutMeContainer{
+    margin: 100px;
+}
+.portTitle{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 2em;
+    line-height: 2;
+}
+.WhyChooseMeContainer{
+    font-size: 25px;
+    color:red;
+    font-weight: 600;
+    text-align: center;
+}
+.highlightTitle{
+    font-size: 25px;
+    font-weight: 600;
+    color: silver;
+}
+.highlightDatakeys{
+    ul{
+        list-style-image: url("/check-mark-11-16.png");
+        li{
+        padding: 10px;
+        font-size: 20px;
+        }
+    }
+}
+.resumeContainer{
+    margin: 100px;
+}
+.resumeBox{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    .box1{
+        p{
+        padding: 10px;
+        flex-grow: 2;
+        cursor: pointer;
+        &:hover{
+            color:tomato;
+            font-weight: 700;
+        }
+    }
+    .box2{
+        flex-grow: 5;
+    }
+    }
+}
+.resumeChange{
+    background-color: white;
+    padding: 10px;
+    box-shadow: 5px 5px silver,-5px -5px silver;
+    padding: 10px;
+  //  max-width: 800px;
+}
+
+//for mobile view 
+
+@media (max-width: 768px) {
+    .navbarContainer {
+        padding: 40px 0px 10px 10px;
+        font-size: 18px;
+        font-weight: 1em;
+    }
+    .homeContainer{
+        margin: 10%;
+    }
+    .aboutDescription{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 2;
+    }
+    .WhyChooseMeContainer{
+        font-size: 20px;
+        font-weight: 500;
+        margin:20px 0px;
+    }
+   
+   .highlightTitle{
+    line-height: 2;
+    font-size: 20px;
+    }
+    .highlightDatakeys{
+        ul{
+            li{
+            padding: 0px;
+            font-size: 18px;
+            line-height: 2;
+            }
+        }
+    }
+    .resumeContainer{
+        margin: 10%;
+    }
+    .aboutMeContainer{
+        margin: 10%;
+    }
+    .resumeBox{
+        flex-direction: column;
+    }
+}
