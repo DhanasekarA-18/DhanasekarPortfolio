@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Formik, Field, Form } from "formik";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +9,7 @@ import styles from "../styles/ContactForm.module.scss";
 import "react-toastify/dist/ReactToastify.css";
 const ContactForm = () => {
   const [loader, setLoader] = useState(false);
-  const imgSize = 25;
+  const formresetRef = useRef();
   const schemavalidation = {
     name: Yup.string().required("Please enter your Name"),
     email: Yup.string().required("Please enter your email address"),
@@ -18,21 +18,44 @@ const ContactForm = () => {
   const SubmitFormSchema = Yup.object().shape(schemavalidation);
   useEffect(() => {
     setTimeout(() => {
-      if (loader) 
-      setLoader(!loader);
-    }, 3000);
+      if (loader) setLoader(!loader);
+    }, 5000);
   }, [loader]);
   return (
     <>
       <div className={styles.contactMeContainer}>
         <div className={styles.contactTitle}>
-          <p>Contact Me</p> 
-          <WhyChooseMe title="Get In Touch" /> 
+          <p>Contact Me</p>
+          <WhyChooseMe title="Get In Touch" />
           <div className={styles.contactDetails}>
-          <div><Link href={"https://www.linkedin.com/in/dhanasekar-a-07a08a1a8/"}><Image src="/linkedin.svg" width={32} height={32}/></Link></div>
-            <div><Link href={"https://www.instagram.com/_d.s.018_/"}><Image src="/instagram.svg" width={32} height={32}/></Link></div>
-            <div><Link href={"https://www.facebook.com/profile.php?id=100035913819054"}><Image src="/facebook.svg" width={32} height={32}/></Link></div>
-            <div style={{backgroundColor:"white",padding:"0px 2px"}}><Link href={"https://api.whatsapp.com/send/?phone=%2B919360678110&text=Hi+Dhanasekar+I+want+to+hire+you+for&type=phone_number&app_absent=0"}><Image src="/whatsapp.svg" width={32} height={32}/></Link></div>
+            <div>
+              <Link
+                href={"https://www.linkedin.com/in/dhanasekar-a-07a08a1a8/"}
+              >
+                <Image src="/linkedin.svg" width={32} height={32} />
+              </Link>
+            </div>
+            <div>
+              <Link href={"https://www.instagram.com/_d.s.018_/"}>
+                <Image src="/instagram.svg" width={32} height={32} />
+              </Link>
+            </div>
+            <div>
+              <Link
+                href={"https://www.facebook.com/profile.php?id=100035913819054"}
+              >
+                <Image src="/facebook.svg" width={32} height={32} />
+              </Link>
+            </div>
+            <div style={{ backgroundColor: "white", padding: "0px 2px" }}>
+              <Link
+                href={
+                  "https://api.whatsapp.com/send/?phone=%2B919360678110&text=Hi+Dhanasekar+I+want+to+hire+you+for&type=phone_number&app_absent=0"
+                }
+              >
+                <Image src="/whatsapp.svg" width={32} height={32} />
+              </Link>
+            </div>
             {/*<div><Link href={"https://www.youtube.com/channel/UC1nofq6mHW4OkMGSg50F3Zg"}><Image  src="/youtube.svg" width={32} height={32}/></Link></div> */}
           </div>
         </div>
@@ -48,11 +71,14 @@ const ContactForm = () => {
                 toast.success("Form Submitted Successfully", {
                   position: toast.POSITION.BOTTOM_TOP,
                 });
+                setTimeout(() => {
+                  formresetRef.current.reset();
+                }, 5000);
               }
             }}
           >
             {({ errors, touched, setFieldValue, values }) => (
-              <Form>
+              <Form ref={formresetRef}>
                 <div className={styles.formField}>
                   <div>
                     <label>Name</label>
@@ -63,7 +89,9 @@ const ContactForm = () => {
                       type="text"
                       className={styles.inputContainer}
                     />
-                    <span className={styles.error}>{errors.name}</span>
+                    {errors.name && touched.name ? (
+                      <span className={styles.error}> {errors.name}</span>
+                    ) : null}
                   </div>
                   <div>
                     <label>Email</label>
@@ -74,7 +102,9 @@ const ContactForm = () => {
                       type="email"
                       className={styles.inputContainer}
                     />
-                    <span className={styles.error}>{errors.email}</span>
+                    {errors.email && touched.email ? (
+                      <span className={styles.error}> {errors.email}</span>
+                    ) : null}
                   </div>
                   <div>
                     <label>Message</label>
@@ -85,7 +115,9 @@ const ContactForm = () => {
                       type="text"
                       className={styles.inputMessage}
                     />
-                    <span className={styles.error}> {errors.message}</span>
+                    {errors.message && touched.message ? (
+                      <span className={styles.error}> {errors.message}</span>
+                    ) : null}
                   </div>
                   <ToastContainer />
                 </div>

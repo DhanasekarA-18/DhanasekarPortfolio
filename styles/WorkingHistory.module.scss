@@ -10,7 +10,7 @@
     border-radius: 5px;
     text-align: center;
     color: white;
-    display: inline;
+    display: flex;
     float: right;
 }
 .workContainer{
@@ -21,6 +21,7 @@
     font-weight: 600;
     color:rgb(36, 36, 124);
     display: block;
+    white-space: nowrap;
 }
 .skill{
     font-size: 25px;
@@ -42,5 +43,18 @@
             color:green;
             font-weight: bolder;
         }
-    }   
+    } 
+    
+}
+
+@media (max-width:400px)
+{
+    .internTitle{
+        font-size: 18px !important;
+
+    }
+    .passingYear{
+        width: 40%;
+        padding: 5px;
+    }
 }

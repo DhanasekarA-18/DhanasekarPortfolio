@@ -7,7 +7,7 @@ const WorkingHistory=()=>{
             <div>
                <Image src="/zolvitBlackTransparent.gif" width={200} height={100}/> 
                 <p className={styles.passingYear}>10-07-2022 - 00-00-0000 </p>
-               <p className={styles.internTitle}>UI INTERNSHIP</p>
+               <p className={styles.internTitle}>UI INTERNSHIP</p> <br/>
                <p><span className={styles.skill}>Skills : </span><span className={styles.skillSet}>React JS,Next JS</span></p>
                 <div className={styles.internDescription}>            
                <p>A ---- Month Internship at VakilSearch(ZOLVIT)</p>

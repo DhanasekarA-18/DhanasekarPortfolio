@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Education from "./Education";
 import WorkingHistory from "./WorkingHistory";
@@ -68,11 +68,13 @@ export const Portfolio = () => {
   };
   const handleContactView = () => {
     ContactRef.current.scrollIntoView({ behavior: "smooth" });
+   setTimeout(()=>{
+    toast.info("Fill your contact Details here!");
+   },1000) 
   };
   const handleDownload = () => {
     toast.success("Resume Downloaded Successfully!");
   };
-
   return (
     <>
       <div className={styles.portfolioContainer} ref={homeRef}>
