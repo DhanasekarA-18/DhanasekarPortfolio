@@ -68,9 +68,9 @@ export const Portfolio = () => {
   };
   const handleContactView = () => {
     ContactRef.current.scrollIntoView({ behavior: "smooth" });
-   setTimeout(()=>{
-    toast.info("Fill your contact Details here!");
-   },1000) 
+    setTimeout(() => {
+      toast.info("Fill your contact Details here!");
+    }, 1000);
   };
   const handleDownload = () => {
     toast.success("Resume Downloaded Successfully!");
@@ -97,7 +97,7 @@ export const Portfolio = () => {
               Hardworking passionate proficiency of grasping new technical
               concepts quickly. Believe in continuous learning and Innovative
               approach. Ready to achieve company goals. Industry experience in
-              HTML,CSS, JavaScript, React JS, Next JS
+              HTML, CSS, JavaScript, React JS, Next JS
             </p>
 
             <span>
@@ -135,9 +135,9 @@ export const Portfolio = () => {
           <div className={styles.portTitle}>AboutMe</div>
           <div>
             <p className={styles.aboutDescription}>
-              FrontEnd Developer with background knowledge of
-              HTML,CSS,JavaScript,React Js with Next Js Framework, along with a
-              knack of building applications with utmost efficiency.
+              FrontEnd Developer with background knowledge of HTML, CSS,
+              JavaScript, React Js with Next Js Framework, along with a knack of
+              building applications with utmost efficiency.
             </p>
           </div>
           <div className={styles.WhyChooseMeContainer}>
@@ -172,11 +172,36 @@ export const Portfolio = () => {
           </div>
           <div className={styles.resumeBox}>
             <div className={styles.box1}>
-              <p onClick={handleEducation} className={education?styles.isActive:""}>Education</p>
-              <p onClick={handleWork} className={workHistory?styles.isActive:""}>Work History</p>
-              <p onClick={handleProgramming} className={programmingSkills?styles.isActive:""} >Programming Skills</p>
-              <p onClick={handleProjects} className={projects?styles.isActive:""} >Projects</p>
-              <p onClick={handleInterests}className={interests?styles.isActive:""}>Interests</p>
+              <p
+                onClick={handleEducation}
+                className={education ? styles.isActive : ""}
+              >
+                Education
+              </p>
+              <p
+                onClick={handleWork}
+                className={workHistory ? styles.isActive : ""}
+              >
+                Work History
+              </p>
+              <p
+                onClick={handleProgramming}
+                className={programmingSkills ? styles.isActive : ""}
+              >
+                Programming Skills
+              </p>
+              <p
+                onClick={handleProjects}
+                className={projects ? styles.isActive : ""}
+              >
+                Projects
+              </p>
+              <p
+                onClick={handleInterests}
+                className={interests ? styles.isActive : ""}
+              >
+                Interests
+              </p>
             </div>
 
             <div className={styles.resumeChange}>
