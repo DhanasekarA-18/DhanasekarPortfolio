@@ -135,7 +135,7 @@ export const Portfolio = () => {
           <div className={styles.portTitle}>AboutMe</div>
           <div>
             <p className={styles.aboutDescription}>
-              FrontEnd Developer developer with background knowledge of
+              FrontEnd Developer with background knowledge of
               HTML,CSS,JavaScript,React Js with Next Js Framework, along with a
               knack of building applications with utmost efficiency.
             </p>
@@ -149,7 +149,7 @@ export const Portfolio = () => {
           <div className={styles.highlightDatakeys}>
             <ul>
               <li>FrontEnd development</li>
-              <li>Interactive Front End as per the design</li>
+              <li>Interactive FrontEnd as per the design</li>
               <li>Redux for State Management</li>
               <li>
                 Next.js is a flexible React framework that gives you building
