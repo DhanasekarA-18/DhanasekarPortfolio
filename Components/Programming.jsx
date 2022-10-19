@@ -1,6 +1,6 @@
 import styles from '../styles/Programming.module.scss'
 const Programming=()=>{
-    const skills=["HTML","CSS","SCSS","JavaScript","React JS","Next JS","JAVA","MySQL"]
+    const skills=["HTML","CSS","SCSS","JavaScript","React JS","Redux","Next JS","Node JS","JAVA","MySQL"]
     return(
         <>
         <div className={styles.ProgrammingtextContainer}>

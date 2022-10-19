@@ -34,7 +34,14 @@
 .internDescription{
     font-size: 18px;
 }
-
+.companyName{
+    font-size: 20px;
+    font-weight: bolder;
+    color: gold;
+    span{
+        color:#022b50;
+    }
+}
 @Media(max-width:786px)
 {
     .internDescription{

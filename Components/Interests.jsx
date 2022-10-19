@@ -6,7 +6,7 @@ const Interests=()=>{
         <ul>
         <li>FrontEnd Developer</li>
         <li>Java Programming</li>
-        <li> Object Oriented Programming </li>
+        <li> Object Oriented Programming</li>
         <li> Database Management System</li>
         </ul>
         </div>

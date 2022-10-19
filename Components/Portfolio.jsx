@@ -102,7 +102,7 @@ export const Portfolio = () => {
 
             <span>
               <a
-                href="/Resume.pdf"
+                href="/DhanasekarResume.pdf"
                 download={"DhanasekarResume"}
                 onClick={handleDownload}
               >
@@ -150,6 +150,7 @@ export const Portfolio = () => {
             <ul>
               <li>FrontEnd development</li>
               <li>Interactive Front End as per the design</li>
+              <li>Redux for State Management</li>
               <li>
                 Next.js is a flexible React framework that gives you building
                 blocks to create fast web applications
@@ -171,11 +172,11 @@ export const Portfolio = () => {
           </div>
           <div className={styles.resumeBox}>
             <div className={styles.box1}>
-              <p onClick={handleEducation}>Education</p>
-              <p onClick={handleWork}>Work History</p>
-              <p onClick={handleProgramming}>Programming Skills</p>
-              <p onClick={handleProjects}>Projects</p>
-              <p onClick={handleInterests}>Interests</p>
+              <p onClick={handleEducation} className={education?styles.isActive:""}>Education</p>
+              <p onClick={handleWork} className={workHistory?styles.isActive:""}>Work History</p>
+              <p onClick={handleProgramming} className={programmingSkills?styles.isActive:""} >Programming Skills</p>
+              <p onClick={handleProjects} className={projects?styles.isActive:""} >Projects</p>
+              <p onClick={handleInterests}className={interests?styles.isActive:""}>Interests</p>
             </div>
 
             <div className={styles.resumeChange}>

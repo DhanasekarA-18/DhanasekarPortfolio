@@ -8,7 +8,7 @@ const Projects = () => {
             {" "}
             <p className={styles.educationArea}>PERSONAL PORTFOLIO WEBSITE</p>
             <p className={styles.technologyTitle}>
-              Technologies Used : React JS,Next JS{" "}
+              Technologies Used : React JS,Next JS
             </p>
             <p>
               A Personal Portfolio website to showcase all my details and
