@@ -124,7 +124,7 @@ const ContactForm = () => {
                 </div>
                 <div>
                   <Tooltip
-                    label="Fill Your Form and Get In Touch"
+                    label="Fill the details and submit"
                     color="green"
                     position="bottom"
                     withArrow
