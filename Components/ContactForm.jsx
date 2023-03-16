@@ -66,15 +66,30 @@ const ContactForm = () => {
             initialValues={{ name: "", email: "", message: "" }}
             validationSchema={SubmitFormSchema}
             onSubmit={async (values) => {
-              await new Promise((resolve) => setTimeout(resolve, 500));
               setLoader(true);
-              if (values) {
-                toast.success("Form Submitted Successfully", {
+              const response = await fetch("/api/sendMail", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  name: values?.name,
+                  email: values?.email,
+                  message: values?.message,
+                }),
+              });
+              const data = await response.json();
+              if (data?.success===true) {
+                toast.success("Mail Sent Successfully", {
                   position: toast.POSITION.BOTTOM_TOP,
                 });
-                setTimeout(() => {
-                  formresetRef.current.reset();
-                }, 5000);
+                setLoader(false);
+                formresetRef.current.reset();
+              } else {
+                toast.error("Mail sending Failed", {
+                  position: toast.POSITION.BOTTOM_TOP,
+                });
+                setLoader(false);
               }
             }}
           >
@@ -130,7 +145,7 @@ const ContactForm = () => {
                     withArrow
                   >
                     <button type="submit" className={styles.submitButton}>
-                      {loader ? "Loading..." : "Submit"}
+                      {loader ? "sending..." : "Submit"}
                     </button>
                   </Tooltip>
                 </div>
