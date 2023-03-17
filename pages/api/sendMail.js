@@ -28,6 +28,7 @@ export default async function handler(req, res) {
 
       mailTransporter.sendMail(mailDetails, function (err, data) {
         if (err) {
+          console.log("error",err);
           res
             .status(500)
             .json({ success: false, error: "Error sending email" });

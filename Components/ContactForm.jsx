@@ -126,9 +126,9 @@ const ContactForm = () => {
                     <label>Message</label>
                   </div>
                   <div>
-                    <Field
+                    <textarea
                       name="message"
-                      type="text"
+                      type="textarea"
                       className={styles.inputMessage}
                     />
                     {errors.message && touched.message ? (
@@ -144,7 +144,7 @@ const ContactForm = () => {
                     position="bottom"
                     withArrow
                   >
-                    <button type="submit" className={styles.submitButton}>
+                    <button type="submit" className={styles.submitButton} disabled={loader}>
                       {loader ? "sending..." : "Submit"}
                     </button>
                   </Tooltip>
