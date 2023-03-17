@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import path from "path";
+
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
@@ -10,23 +12,23 @@ export default async function handler(req, res) {
           pass:"kcozzmqlgvcojnqs",
         },
       });
-
+      let filePath = path.join(process.cwd(), 'public', 'DhanasekarResume.pdf');
       let mailDetails = {
         from: "dhanasekar20002@gmail.com",
         to: `${email}`,
         subject: "Thanks for Contacting Me",
         html: `<h1 style='color:green'>Hello ${name}!</h1><p>Thanks for your Message : ${message}</P><h3 style='color:red'>Note:This is auto generated mail by Nodemailer</h3>`,
         //<p>Here's my Resume!</p>, sub: Please find attached the PDF version of the portfolio
-        // attachments: [
-        //   {
-        //     filename: "DhanasekarResume.pdf",
-        //     path: "./public/DhanasekarResume.pdf",
-        //     contentType: "application/pdf",
-        //   },
-        // ],
+        attachments: [
+          {
+            filename: "DhanasekarResume.pdf",
+            path: filePath,
+            contentType: "application/pdf",
+          },
+        ],
       };
 
-     mailTransporter.sendMail(mailDetails,  function (err, data) {
+    await mailTransporter.sendMail(mailDetails,  function (err, data) {
         if (err) {
           console.log("error",err);
           res
