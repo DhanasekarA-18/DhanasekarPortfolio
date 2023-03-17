@@ -14,9 +14,9 @@ export default async function handler(req, res) {
       let mailDetails = {
         from: "dhanasekar20002@gmail.com",
         to: `${email}`,
-        subject: "Please find attached the PDF version of the portfolio.",
+        subject: "Thanks for Contacting Me",
         html: `<h1 style='color:green'>Hello ${name}!</h1><p>Thanks for your Message : ${message}</P><h3 style='color:red'>Note:This is auto generated mail by Nodemailer</h3>`,
-        //<p>Here's my Resume!</p>
+        //<p>Here's my Resume!</p>, sub: Please find attached the PDF version of the portfolio
         // attachments: [
         //   {
         //     filename: "DhanasekarResume.pdf",
