@@ -9,15 +9,15 @@ export default async function handler(req, res) {
         service: "gmail",
         auth: {
           user: "dhanasekar20002@gmail.com",
-          pass:"kcozzmqlgvcojnqs",
+          pass: "kcozzmqlgvcojnqs",
         },
       });
-      let filePath = path.join(process.cwd(), 'public', 'DhanasekarResume.pdf'); //resumepath
+      let filePath = path.join(process.cwd(), "public", "DhanasekarResume.pdf"); //resumepath
       let mailDetails = {
         from: "dhanasekar20002@gmail.com",
         to: `${email}`,
         subject: "Please find attached the PDF version of the portfolio",
-        html: `<h1 style='color:green'>Dear ${name}!</h1><p>Thanks for Contacting Me and for Your Message : ${message}</P><h3 style='color:red'>Note:This mail is auto generated</h3>`,
+        html: `<h1 style='color:#022b50'>Dear ${name}!</h1><p>Thanks for contacting me and for Your Message.</p><p><b style='color:green'>Message received on portfolio</b>: ${message}</P><h3 style='color:red'>Note:This mail is auto generated</h3>`,
         attachments: [
           {
             filename: "DhanasekarResume.pdf",
@@ -27,9 +27,9 @@ export default async function handler(req, res) {
         ],
       };
 
-    await mailTransporter.sendMail(mailDetails,  function (err, data) {
+      await mailTransporter.sendMail(mailDetails, function (err, data) {
         if (err) {
-          console.log("error",err);
+          console.log("error", err);
           res
             .status(500)
             .json({ success: false, error: "Error sending email" });
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       });
     } catch (err) {
       console.log(err);
-      res.status(405).json({success: false, error: "Method not allowed" });
+      res.status(405).json({ success: false, error: "Method not allowed" });
     }
   }
 }
