@@ -17,11 +17,6 @@ const ContactForm = () => {
     message: Yup.string().required("Please enter your message"),
   };
   const SubmitFormSchema = Yup.object().shape(schemavalidation);
-  useEffect(() => {
-    setTimeout(() => {
-      if (loader) setLoader(!loader);
-    }, 5000);
-  }, [loader]);
   return (
     <>
       <div className={styles.contactMeContainer}>
