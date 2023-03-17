@@ -126,9 +126,9 @@ const ContactForm = () => {
                     <label>Message</label>
                   </div>
                   <div>
-                    <textarea
+                    <Field
                       name="message"
-                      type="textarea"
+                      as="textarea"
                       className={styles.inputMessage}
                     />
                     {errors.message && touched.message ? (
