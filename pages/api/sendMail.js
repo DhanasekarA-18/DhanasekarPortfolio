@@ -12,13 +12,12 @@ export default async function handler(req, res) {
           pass:"kcozzmqlgvcojnqs",
         },
       });
-      let filePath = path.join(process.cwd(), 'public', 'DhanasekarResume.pdf');
+      let filePath = path.join(process.cwd(), 'public', 'DhanasekarResume.pdf'); //resumepath
       let mailDetails = {
         from: "dhanasekar20002@gmail.com",
         to: `${email}`,
-        subject: "Thanks for Contacting Me",
-        html: `<h1 style='color:green'>Hello ${name}!</h1><p>Thanks for your Message : ${message}</P><h3 style='color:red'>Note:This is auto generated mail by Nodemailer</h3>`,
-        //<p>Here's my Resume!</p>, sub: Please find attached the PDF version of the portfolio
+        subject: "Please find attached the PDF version of the portfolio",
+        html: `<h1 style='color:green'>Dear ${name}!</h1><p>Thanks for Contacting Me and for Your Message : ${message}</P><h3 style='color:red'>Note:This mail is auto generated</h3>`,
         attachments: [
           {
             filename: "DhanasekarResume.pdf",
