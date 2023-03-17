@@ -1,5 +1,4 @@
 import nodemailer from "nodemailer";
-
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
@@ -15,12 +14,12 @@ export default async function handler(req, res) {
       let mailDetails = {
         from: "dhanasekar20002@gmail.com",
         to: `${email}`,
-        subject: "Message From Portfolio",
+        subject: "'Please find attached the PDF version of the portfolio.",
         html: `<h1 style='color:green'>Hello ${name}!</h1><p>Thanks for your Message : ${message}</P><p>Here's my Resume!</p> <h3 style='color:red'>Note:This is auto generated mail by Nodemailer</h3>`,
         attachments: [
           {
             filename: "DhanasekarResume.pdf",
-            path: "./public/DhanasekarResume.pdf",
+            path: "/DhanasekarResume.pdf",
             contentType: "application/pdf",
           },
         ],
