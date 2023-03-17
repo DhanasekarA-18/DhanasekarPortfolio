@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         service: "gmail",
         auth: {
           user: "dhanasekar20002@gmail.com",
-          pass: process.env.Email_Pwd,
+          pass:"kcozzmqlgvcojnqs",
         },
       });
 
