@@ -74,6 +74,7 @@ const ContactForm = () => {
                 }),
               });
               const data = await response.json();
+              console.log("responce->",data);
               if (data?.success===true) {
                 toast.success("Mail Sent Successfully", {
                   position: toast.POSITION.BOTTOM_TOP,
